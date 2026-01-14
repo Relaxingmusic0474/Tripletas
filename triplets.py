@@ -59,3 +59,9 @@ class Triplet:
     # Para imprimir una tripleta
     def __repr__(self):
         return f"({self.a()}, {self.b()}, {self.c()})"
+    
+
+def distance(T1: "Triplet", T2: "Triplet") -> float:
+    candidates = [abs(T1.a() - T2.a()), abs(T1.b() - T2.b()), abs(T1.c() - T2.c())]
+    d = min(candidates)
+    return d
