@@ -65,3 +65,18 @@ def distance(T1: "Triplet", T2: "Triplet") -> float:
     candidates = [abs(T1.a() - T2.a()), abs(T1.b() - T2.b()), abs(T1.c() - T2.c())]
     d = min(candidates)
     return d
+
+def minor_triplet(T1: "Triplet", T2: "Triplet") -> Triplet:
+    if T1.b() < T2.b():
+        return T1
+    if T1.b() == T2.b() and T1.a() < T2.a():
+        return T1
+    if T1.b() == T2.b() and T1.a() == T2.a() and T1.c() < T2.c():
+        return T1
+    return T2
+
+def major_triplet(T1: "Triplet", T2: "Triplet") -> Triplet:
+    if minor_triplet(T1, T2) is T1:
+        return T2
+    else:
+        return T1
