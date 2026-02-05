@@ -55,6 +55,22 @@ class Triplet:
             return Triplet(r*self.c(),
                            r*self.b(),
                            r*self.a())
+    
+    # Orden estricto
+    def __lt__(self, T: "Triplet"):
+        if self.b() != T.b():
+            return self.b() < T.b()
+        if self.a() != T.a():
+            return self.a() < T.a()
+        return self.c() < T.c()
+    
+    # Orden no estricto
+    def __le__(self, T: "Triplet"):
+        if self.b() != T.b():
+            return self.b() < T.b()
+        if self.a() != T.a():
+            return self.a() < T.a()
+        return self.c() <= T.c()
         
     # Para imprimir una tripleta
     def __repr__(self):
