@@ -82,6 +82,7 @@ def distance(T1: "Triplet", T2: "Triplet") -> float:
     d = min(candidates)
     return d
 
+'''
 def minor_triplet(T1: "Triplet", T2: "Triplet") -> Triplet:
     if T1.b() < T2.b():
         return T1
@@ -96,3 +97,4 @@ def major_triplet(T1: "Triplet", T2: "Triplet") -> Triplet:
         return T2
     else:
         return T1
+'''
